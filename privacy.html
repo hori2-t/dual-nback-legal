@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー — Dual N-Back</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --text: #1a1a1a;
+    --muted: #666;
+    --accent: #0066cc;
+    --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { text-decoration: underline; }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  h2 {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  p { margin: 8px 0 16px 0; }
+  ul { padding-left: 24px; }
+  li { margin: 6px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: white;
+    font-weight: 600;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .contact a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back">← トップへ戻る</a>
+
+    <h1>プライバシーポリシー</h1>
+    <p class="meta">最終更新日: 2026年5月2日</p>
+
+    <p>
+      hori2（以下「開発者」）は、本アプリ「Dual N-Back: 集中力トレーニング」（以下「本アプリ」）における利用者のプライバシー保護を重要と考えています。本ポリシーは、本アプリが取り扱う情報の種類と目的を明確にするものです。
+    </p>
+
+    <h2>1. 収集する情報</h2>
+
+    <p>本アプリは、以下のいずれの個人情報も収集しません。</p>
+
+    <table>
+      <thead>
+        <tr><th>情報の種類</th><th>収集</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>氏名・メールアドレス・電話番号</td><td>収集しない</td><td>アカウント機能なし</td></tr>
+        <tr><td>位置情報</td><td>収集しない</td><td>位置情報APIを使用していません</td></tr>
+        <tr><td>連絡先・写真・カレンダー</td><td>収集しない</td><td>該当APIを使用していません</td></tr>
+        <tr><td>健康データ（HealthKit）</td><td>収集しない</td><td>HealthKit非使用</td></tr>
+        <tr><td>クラッシュレポート・解析データ</td><td>収集しない</td><td>初期バージョンでは未導入</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. ローカル保存データ</h2>
+
+    <p>本アプリは、利用者の体験向上のため、以下のデータを<strong>端末内のみ</strong>に保存します。これらのデータは外部サーバーへ送信されることはありません。</p>
+
+    <ul>
+      <li>ゲームプレイ履歴（Nレベル、正答率、プレイ日時）</li>
+      <li>アプリ設定（試行間隔、表示時間、通知時刻、目標セッション数など）</li>
+      <li>達成済みアチーブメント情報</li>
+    </ul>
+
+    <p>これらのデータはiOSの標準保存領域（UserDefaults）に保存され、本アプリを削除すると同時に消去されます。</p>
+
+    <h2>3. 通知について</h2>
+
+    <p>本アプリは、利用者が通知機能をONにした場合に限り、毎日の指定時刻にローカル通知を送信します。通知は端末内で完結し、外部サーバーを経由しません。利用者はいつでもアプリ設定からON/OFFを切り替えられます。</p>
+
+    <h2>4. 第三者提供</h2>
+
+    <p>本アプリは、利用者のいかなる情報も第三者へ提供することはありません。</p>
+
+    <h2>5. 広告について</h2>
+
+    <p>
+      本アプリは、無料版において広告ネットワーク（Google AdMob 等）を用いてバナー広告を表示する場合があります。広告ネットワークは、広告配信のために広告識別子（IDFA）を取得する場合があります。
+    </p>
+    <p>
+      利用者は、iOSの「設定 > プライバシーとセキュリティ > Apple広告 > パーソナライズされた広告」より、パーソナライズ広告を無効化できます。
+    </p>
+    <p>
+      初期リリース時点では広告は未実装です。広告導入時には本ポリシーを更新します。
+    </p>
+
+    <h2>6. 子供のプライバシー</h2>
+
+    <p>
+      本アプリは特定の年齢層を対象としていませんが、13歳未満の利用者から意図的に個人情報を収集することはありません。
+    </p>
+
+    <h2>7. 本ポリシーの変更</h2>
+
+    <p>
+      本ポリシーは、法令の改正やサービス内容の変更に応じて改定されることがあります。重要な変更がある場合は、本ページで告知します。
+    </p>
+
+    <h2 id="contact">8. お問い合わせ</h2>
+
+    <p class="contact">
+      本ポリシーに関するご質問は、以下の連絡先までお寄せください。<br>
+      メール: <a href="mailto:hori2taka@gmail.com">hori2taka@gmail.com</a>
+    </p>
+
+    <footer>
+      © 2026 hori2. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
