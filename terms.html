@@ -4,64 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>利用規約 — Dual N-Back</title>
+<meta name="description" content="Dual N-Back アプリの利用規約。利用条件、禁止事項、課金、免責事項について。">
+<meta name="theme-color" content="#0c0a18">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
 <style>
   :root {
-    --bg: #fafafa;
-    --text: #1a1a1a;
-    --muted: #666;
-    --accent: #0066cc;
-    --border: #e5e5e5;
+    --bg: #0c0a18;
+    --bg-elev: #14102a;
+    --bg-card: #1a1530;
+    --text: #f5f3ff;
+    --text-dim: #a89cc9;
+    --text-mute: #6b6088;
+    --accent: #c4a8ff;
+    --accent-bright: #e0c8ff;
+    --accent-deep: #7a4fd1;
+    --border: rgba(196, 168, 255, 0.12);
+    --border-strong: rgba(196, 168, 255, 0.25);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.8;
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(60% 50% at 80% 0%, rgba(122, 79, 209, 0.14), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
   }
   .container {
-    max-width: 720px;
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
   }
   .back {
-    display: inline-block;
-    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 32px;
     color: var(--accent);
     text-decoration: none;
     font-size: 14px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
   }
-  .back:hover { text-decoration: underline; }
+  .back:hover {
+    border-color: var(--border-strong);
+    background: rgba(196, 168, 255, 0.06);
+  }
   h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    background: linear-gradient(120deg, var(--accent-bright) 10%, var(--accent) 60%, var(--accent-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
   }
   .meta {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 32px;
+    color: var(--text-mute);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
   }
   h2 {
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
+    font-size: 21px;
+    margin-top: 56px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
+    letter-spacing: -0.01em;
+    font-weight: 600;
   }
-  p { margin: 8px 0 16px 0; }
-  ul, ol { padding-left: 24px; }
-  li { margin: 6px 0; }
-  footer {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 13px;
-  }
+  p { margin: 12px 0 18px; color: var(--text-dim); }
+  ul, ol { padding-left: 24px; color: var(--text-dim); }
+  li { margin: 8px 0; }
+  li::marker { color: var(--accent); }
   .contact a {
-    color: var(--accent);
+    color: var(--accent-bright);
     text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    transition: border-color 0.2s var(--ease);
+  }
+  .contact a:hover { border-color: var(--accent-bright); }
+  footer {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    color: var(--text-mute);
+    font-size: 13px;
+    text-align: center;
   }
 </style>
 </head>
@@ -85,7 +131,7 @@
       <li>本アプリの利用に必要な端末・通信環境は利用者の負担で用意するものとします。</li>
     </ol>
 
-    <h2>第3条（禁止事項）</h2>
+    <h2>第3条(禁止事項)</h2>
     <p>利用者は、本アプリの利用にあたり、以下の行為をしてはなりません。</p>
     <ul>
       <li>法令または公序良俗に違反する行為</li>
@@ -94,36 +140,36 @@
       <li>第三者の権利・利益を侵害する行為</li>
     </ul>
 
-    <h2>第4条（課金・購入）</h2>
+    <h2>第4条(課金・購入)</h2>
     <ol>
-      <li>本アプリ内には、追加機能を提供する有料プラン（買い切り型・サブスクリプション型）が含まれる場合があります。</li>
+      <li>本アプリ内には、追加機能を提供する有料プラン(買い切り型・サブスクリプション型)が含まれる場合があります。</li>
       <li>有料プランの購入・解約・返金については、Apple App Store の規定に従うものとします。</li>
       <li>サブスクリプションは、解約手続きを行わない限り、各更新期間終了時に自動的に更新されます。</li>
     </ol>
 
-    <h2>第5条（知的財産権）</h2>
+    <h2>第5条(知的財産権)</h2>
     <p>本アプリに関する一切の知的財産権は、開発者または正当な権利者に帰属します。</p>
 
-    <h2>第6条（免責事項）</h2>
+    <h2>第6条(免責事項)</h2>
     <ol>
       <li>本アプリは、利用者の認知機能向上を保証するものではありません。</li>
       <li>開発者は、本アプリの利用により利用者に生じた損害について、開発者の故意または重大な過失による場合を除き、責任を負いません。</li>
       <li>開発者は、本アプリの動作不具合・データの消失・通知の不達等について、可能な限り防止するよう努めますが、完全性を保証するものではありません。</li>
     </ol>
 
-    <h2>第7条（サービス内容の変更・終了）</h2>
+    <h2>第7条(サービス内容の変更・終了)</h2>
     <p>開発者は、利用者への事前通知なく本アプリの内容を変更・追加・終了することができます。</p>
 
-    <h2>第8条（規約の変更）</h2>
+    <h2>第8条(規約の変更)</h2>
     <p>開発者は、必要と判断した場合、本規約を変更することができます。変更後の規約は、本ページに掲載した時点から効力を生じるものとします。</p>
 
-    <h2>第9条（準拠法・裁判管轄）</h2>
+    <h2>第9条(準拠法・裁判管轄)</h2>
     <p>本規約は日本法に準拠します。本アプリに関連して紛争が生じた場合、開発者の住所地を管轄する裁判所を第一審の専属的合意管轄とします。</p>
 
-    <h2 id="contact">第10条（お問い合わせ）</h2>
+    <h2 id="contact">第10条(お問い合わせ)</h2>
     <p class="contact">
       本規約に関するお問い合わせは、以下の連絡先までお寄せください。<br>
-      メール: <a href="mailto:hori2taka@gmail.com">hori2taka@gmail.com</a>
+      メール: <a href="mailto:hori2.apps@gmail.com">hori2.apps@gmail.com</a>
     </p>
 
     <footer>

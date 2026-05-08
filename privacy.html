@@ -4,86 +4,145 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プライバシーポリシー — Dual N-Back</title>
+<meta name="description" content="Dual N-Back アプリのプライバシーポリシー。データの収集・取り扱い方針について。">
+<meta name="theme-color" content="#0c0a18">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
 <style>
   :root {
-    --bg: #fafafa;
-    --text: #1a1a1a;
-    --muted: #666;
-    --accent: #0066cc;
-    --border: #e5e5e5;
+    --bg: #0c0a18;
+    --bg-elev: #14102a;
+    --bg-card: #1a1530;
+    --text: #f5f3ff;
+    --text-dim: #a89cc9;
+    --text-mute: #6b6088;
+    --accent: #c4a8ff;
+    --accent-bright: #e0c8ff;
+    --accent-deep: #7a4fd1;
+    --border: rgba(196, 168, 255, 0.12);
+    --border-strong: rgba(196, 168, 255, 0.25);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.8;
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(60% 50% at 80% 0%, rgba(122, 79, 209, 0.14), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
   }
   .container {
-    max-width: 720px;
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
   }
   .back {
-    display: inline-block;
-    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 32px;
     color: var(--accent);
     text-decoration: none;
     font-size: 14px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
   }
-  .back:hover { text-decoration: underline; }
+  .back:hover {
+    border-color: var(--border-strong);
+    background: rgba(196, 168, 255, 0.06);
+  }
   h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    background: linear-gradient(120deg, var(--accent-bright) 10%, var(--accent) 60%, var(--accent-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
   }
   .meta {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 32px;
+    color: var(--text-mute);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
   }
   h2 {
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
+    font-size: 21px;
+    margin-top: 56px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
+    letter-spacing: -0.01em;
+    font-weight: 600;
   }
   h3 {
-    font-size: 16px;
-    margin-top: 24px;
+    font-size: 17px;
+    margin-top: 28px;
     margin-bottom: 8px;
+    color: var(--accent-bright);
+    font-weight: 600;
   }
-  p { margin: 8px 0 16px 0; }
-  ul { padding-left: 24px; }
-  li { margin: 6px 0; }
+  p { margin: 12px 0 18px; color: var(--text-dim); }
+  p strong { color: var(--text); font-weight: 600; }
+  ul { padding-left: 24px; color: var(--text-dim); }
+  li { margin: 8px 0; }
+  li::marker { color: var(--accent); }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 16px 0;
+    margin: 20px 0;
     font-size: 14px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
   }
   th, td {
     text-align: left;
-    padding: 10px 12px;
+    padding: 14px 18px;
     border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
   }
+  tr:last-child td { border-bottom: none; }
   th {
-    background: white;
+    background: var(--bg-card);
+    color: var(--text);
     font-weight: 600;
-  }
-  footer {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
+    letter-spacing: 0.02em;
     font-size: 13px;
+    text-transform: uppercase;
   }
+  tbody tr:hover td { background: rgba(196, 168, 255, 0.03); }
   .contact a {
-    color: var(--accent);
+    color: var(--accent-bright);
     text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    transition: border-color 0.2s var(--ease);
   }
-  .contact a:hover { text-decoration: underline; }
+  .contact a:hover { border-color: var(--accent-bright); }
+  footer {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    color: var(--text-mute);
+    font-size: 13px;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -162,7 +221,7 @@
 
     <p class="contact">
       本ポリシーに関するご質問は、以下の連絡先までお寄せください。<br>
-      メール: <a href="mailto:hori2taka@gmail.com">hori2taka@gmail.com</a>
+      メール: <a href="mailto:hori2.apps@gmail.com">hori2.apps@gmail.com</a>
     </p>
 
     <footer>

@@ -3,93 +3,622 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dual N-Back: 集中力トレーニング — 法的情報</title>
+<title>デュアル N バック - 脳トレ｜1日5分の集中力トレーニング</title>
+<meta name="description" content="科学的根拠のあるDual N-Back課題を1日5分で。Jaeggi研究のワーキングメモリ訓練を毎日続けやすく最適化したiPhoneアプリ。">
+<meta name="theme-color" content="#0c0a18">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="apple-touch-icon" href="assets/icon-256.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hori2-t.github.io/dual-nback-legal/">
+<meta property="og:title" content="デュアル N バック - 脳トレ｜1日5分の集中力トレーニング">
+<meta property="og:description" content="科学的根拠のあるDual N-Back課題を1日5分で。ワーキングメモリと集中力を毎日鍛える。">
+<meta property="og:image" content="https://hori2-t.github.io/dual-nback-legal/assets/icon-512.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="デュアル N バック - 脳トレ">
+<meta name="twitter:description" content="1日5分の集中力トレーニング">
+<meta name="twitter:image" content="https://hori2-t.github.io/dual-nback-legal/assets/icon-512.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "デュアル N バック - 脳トレ",
+  "operatingSystem": "iOS 17+",
+  "applicationCategory": "EducationalApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"},
+  "description": "科学的根拠のあるDual N-Back課題を1日5分で。ワーキングメモリと集中力を毎日鍛えるiPhoneアプリ。",
+  "image": "https://hori2-t.github.io/dual-nback-legal/assets/icon-512.jpg",
+  "url": "https://hori2-t.github.io/dual-nback-legal/"
+}
+</script>
+
 <style>
   :root {
-    --bg: #fafafa;
-    --text: #1a1a1a;
-    --muted: #666;
-    --accent: #0066cc;
-    --border: #e5e5e5;
+    --bg: #0c0a18;
+    --bg-elev: #14102a;
+    --bg-card: #1a1530;
+    --text: #f5f3ff;
+    --text-dim: #a89cc9;
+    --text-mute: #6b6088;
+    --accent: #c4a8ff;
+    --accent-bright: #e0c8ff;
+    --accent-deep: #7a4fd1;
+    --border: rgba(196, 168, 255, 0.12);
+    --border-strong: rgba(196, 168, 255, 0.25);
+    --radius: 16px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
     background: var(--bg);
     color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
     line-height: 1.7;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(60% 50% at 80% 0%, rgba(122, 79, 209, 0.18), transparent 70%),
+      radial-gradient(50% 60% at 10% 80%, rgba(196, 168, 255, 0.10), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  main { position: relative; z-index: 1; }
+
+  /* ─── Layout ─────────────────────────── */
   .container {
-    max-width: 720px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: 0 clamp(20px, 5vw, 48px);
   }
-  h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
-  }
-  .subtitle {
-    color: var(--muted);
-    margin-bottom: 32px;
-  }
-  .links {
+
+  /* ─── Hero ───────────────────────────── */
+  .hero {
+    padding: clamp(72px, 14vw, 140px) 0 clamp(60px, 10vw, 100px);
     display: grid;
-    gap: 12px;
-    margin: 32px 0;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
   }
-  .link-card {
-    display: block;
-    padding: 20px 24px;
-    background: white;
-    border: 1px solid var(--border);
+  .hero-text { max-width: 580px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    background: rgba(196, 168, 255, 0.06);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  h1.hero-title {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    margin: 0 0 24px;
+  }
+  h1.hero-title .gradient {
+    background: linear-gradient(120deg, var(--accent-bright) 10%, var(--accent) 50%, var(--accent-deep) 95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-lead {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: var(--text-dim);
+    margin: 0 0 36px;
+    max-width: 520px;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+  .badge-appstore {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 24px;
+    background: var(--text);
+    color: var(--bg);
     border-radius: 12px;
     text-decoration: none;
-    color: var(--text);
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    font-weight: 600;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   }
-  .link-card:hover {
+  .badge-appstore:hover {
     transform: translateY(-2px);
-    border-color: var(--accent);
+    box-shadow: 0 16px 40px -10px rgba(196, 168, 255, 0.4);
   }
-  .link-card h2 {
-    font-size: 16px;
-    margin: 0 0 4px 0;
-    color: var(--accent);
+  .badge-appstore.disabled {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
   }
-  .link-card p {
-    margin: 0;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  footer {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
+  .badge-appstore svg { width: 28px; height: 28px; flex-shrink: 0; }
+  .badge-appstore-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .badge-appstore-text small { font-size: 11px; opacity: 0.7; font-weight: 500; }
+  .badge-appstore-text strong { font-size: 17px; }
+  .pill-status {
     font-size: 13px;
+    color: var(--text-mute);
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(196, 168, 255, 0.05);
+    border: 1px solid var(--border);
+  }
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .hero-icon {
+    position: absolute;
+    inset: 12%;
+    border-radius: 28%;
+    background-image: url("assets/icon-256.png");
+    background-size: cover;
+    box-shadow:
+      0 40px 100px -20px rgba(122, 79, 209, 0.6),
+      0 0 0 1px rgba(196, 168, 255, 0.15);
+  }
+  .hero-orbit {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(196, 168, 255, 0.18);
+    animation: rotate 60s linear infinite;
+  }
+  .hero-orbit::after {
+    content: "";
+    position: absolute;
+    top: -4px; left: 50%;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    transform: translateX(-50%);
+    box-shadow: 0 0 16px var(--accent);
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+
+  /* ─── Stats strip ───────────────────── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: clamp(60px, 10vw, 100px);
+  }
+  .stat-item {
+    background: var(--bg-elev);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-bright), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── Sections ───────────────────────── */
+  section { padding: clamp(60px, 10vw, 100px) 0; }
+  .section-head {
+    margin-bottom: clamp(40px, 6vw, 64px);
+    max-width: 720px;
+  }
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .section-title {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+  .section-lead {
+    font-size: 16px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* ─── Features ───────────────────────── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .feature {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+    position: relative;
+    overflow: hidden;
+  }
+  .feature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(196, 168, 255, 0.06), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+  }
+  .feature:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+  }
+  .feature:hover::before { opacity: 1; }
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(196, 168, 255, 0.18), rgba(122, 79, 209, 0.10));
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    color: var(--accent-bright);
+    position: relative;
+    z-index: 1;
+  }
+  .feature-icon svg { width: 22px; height: 22px; }
+  .feature h3 {
+    font-size: 19px;
+    margin: 0 0 10px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+  .feature p {
+    font-size: 14.5px;
+    color: var(--text-dim);
+    margin: 0;
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── Screenshots ────────────────────── */
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    align-items: end;
+  }
+  .shot {
+    position: relative;
+    aspect-ratio: 1284 / 2778;
+    border-radius: 36px;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+    transition: transform 0.4s var(--ease);
+  }
+  .shot:nth-child(1) { transform: translateY(0); }
+  .shot:nth-child(2) { transform: translateY(-24px); }
+  .shot:nth-child(3) { transform: translateY(0); }
+  .shot:hover { transform: translateY(-30px) !important; }
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .shot-caption {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-mute);
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── Science ────────────────────────── */
+  .science {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: clamp(32px, 5vw, 56px);
+    margin-bottom: clamp(40px, 8vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+  }
+  .science-quote {
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .science-cite {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-mute);
+    font-style: normal;
+  }
+  .science-stat {
+    text-align: center;
+  }
+  .science-stat-num {
+    font-size: clamp(56px, 10vw, 96px);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--accent-bright), var(--accent-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.04em;
+  }
+  .science-stat-label {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  /* ─── Legal links ────────────────────── */
+  .legal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .legal-card {
+    display: block;
+    padding: 28px 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .legal-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .legal-card h3 {
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: var(--accent-bright);
+    font-weight: 600;
+  }
+  .legal-card p {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+  .legal-card .arrow {
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.2s var(--ease);
+  }
+  .legal-card:hover .arrow { transform: translateX(4px); }
+
+  /* ─── Footer ─────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    color: var(--text-mute);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; text-align: left; }
+    .hero-visual { max-width: 220px; margin: 0 0 16px; }
+    .legal { grid-template-columns: 1fr; }
+    .shot:nth-child(2) { transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-orbit { animation: none; }
+    * { transition: none !important; }
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Dual N-Back: 集中力トレーニング</h1>
-    <p class="subtitle">毎日5分で思考スピードを上げる</p>
-
-    <div class="links">
-      <a class="link-card" href="privacy.html">
-        <h2>プライバシーポリシー</h2>
-        <p>本アプリが収集するデータと取り扱い方針について</p>
-      </a>
-      <a class="link-card" href="terms.html">
-        <h2>利用規約</h2>
-        <p>本アプリの利用条件について</p>
-      </a>
+<main>
+  <header class="container hero">
+    <div class="hero-text">
+      <span class="eyebrow">Now in Review</span>
+      <h1 class="hero-title">
+        毎日5分で、<br>
+        <span class="gradient">脳のメンテナンス。</span>
+      </h1>
+      <p class="hero-lead">
+        Jaeggi研究のDual N-Back課題を、1セッション約70秒で続けやすく最適化。
+        ワーキングメモリと集中力を、歯磨きのように習慣化する。
+      </p>
+      <div class="cta-row">
+        <a class="badge-appstore disabled" aria-disabled="true" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <span class="badge-appstore-text">
+            <small>準備中 — 審査通過後に公開</small>
+            <strong>App Store でダウンロード</strong>
+          </span>
+        </a>
+        <span class="pill-status">iOS 17+ ・ 無料</span>
+      </div>
     </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orbit"></div>
+      <div class="hero-icon"></div>
+    </div>
+  </header>
 
-    <footer>
-      © 2026 hori2. All rights reserved.
-    </footer>
+  <div class="container">
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-num">70<small style="font-size:0.5em;font-weight:500;">秒</small></div>
+        <div class="stat-label">1セッションで完結</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">N=2-9</div>
+        <div class="stat-label">難易度自動チューニング</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">19</div>
+        <div class="stat-label">実績バッジ</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">端末内処理</div>
+      </div>
+    </div>
   </div>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">Features</p>
+        <h2 class="section-title">続けるために、削ぎ落とした。</h2>
+        <p class="section-lead">派手なゲーミフィケーションは入れない。淡々と続けるための機能だけを残した、ミニマルな脳トレ体験。</p>
+      </div>
+      <div class="features-grid">
+        <article class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>1セッション約70秒</h3>
+          <p>20試行 × 3.5秒。通勤電車・昼休み・寝る前のスキマ時間で完結。長時間プレイは推奨しない。</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/></svg>
+          </div>
+          <h3>Nレベル自動調整</h3>
+          <p>直近3セッションのスコアから次回難易度をチューニング。「自分の限界より少し上」を常に維持。</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3>3つのゲームモード</h3>
+          <p>標準のフォーカス、連続正答を競うチャレンジ、時間無制限のエンドレス。気分に合わせて選べる。</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>プライバシーファースト</h3>
+          <p>スコア・履歴は全て端末内のみに保存。サーバー送信なし。Apple Tracking Transparency 完全準拠。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="science">
+    <div class="container">
+      <div class="science">
+        <div class="science-stat">
+          <div class="science-stat-num">100+</div>
+          <div class="science-stat-label">関連論文</div>
+        </div>
+        <div>
+          <p class="section-eyebrow" style="margin-bottom:16px;">Backed by Research</p>
+          <p class="science-quote">
+            位置情報と聴覚情報を同時にN個前と比較する課題は、ワーキングメモリ容量と注意制御を同時に鍛える唯一無二のメソッド。
+          </p>
+          <p class="science-cite">
+            Susanne Jaeggi et al. (2008) "Improving fluid intelligence with training on working memory" — PNAS<br>
+            本アプリはオリジナル課題に忠実に実装。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">Screens</p>
+        <h2 class="section-title">起動して、すぐ始める。</h2>
+        <p class="section-lead">ホーム → セッション → 結果。3画面で完結する潔さ。</p>
+      </div>
+      <div class="shots">
+        <figure style="margin:0;">
+          <div class="shot"><img src="assets/screenshots/01-home.jpg" alt="ホーム画面" loading="lazy"></div>
+          <figcaption class="shot-caption">ホーム — N4で待機</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div class="shot"><img src="assets/screenshots/02-game.jpg" alt="ゲーム画面" loading="lazy"></div>
+          <figcaption class="shot-caption">セッション — 場所と文字を同時に</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div class="shot"><img src="assets/screenshots/03-result.jpg" alt="結果画面" loading="lazy"></div>
+          <figcaption class="shot-caption">結果 — 即座にフィードバック</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="legal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">Legal</p>
+        <h2 class="section-title">取り扱いについて</h2>
+        <p class="section-lead">本アプリの利用条件とデータ取り扱い方針。</p>
+      </div>
+      <div class="legal">
+        <a class="legal-card" href="privacy.html">
+          <h3>プライバシーポリシー <span class="arrow">→</span></h3>
+          <p>アプリが収集するデータと取り扱い方針について</p>
+        </a>
+        <a class="legal-card" href="terms.html">
+          <h3>利用規約 <span class="arrow">→</span></h3>
+          <p>本アプリの利用条件について</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 hori2 ・ Built with care for daily focus.
+    </div>
+  </footer>
+</main>
 </body>
 </html>
