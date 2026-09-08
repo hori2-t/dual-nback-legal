@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>デュアル N バック - 脳トレ｜1日5分の集中力トレーニング</title>
-<meta name="description" content="科学的根拠のあるDual N-Back課題を1日5分で。Jaeggi研究のワーキングメモリ訓練を毎日続けやすく最適化したiPhoneアプリ。">
+<title>Dual N-Back - 脳トレ｜毎日約5分、自分のペースで練習</title>
+<meta name="description" content="位置と音を比較するDual N-Backを練習し、履歴や結果比較で自分の練習を振り返れるiPhoneアプリ。">
 <meta name="theme-color" content="#0c0a18">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hori2-t.github.io/dual-nback-legal/">
-<meta property="og:title" content="デュアル N バック - 脳トレ｜1日5分の集中力トレーニング">
-<meta property="og:description" content="科学的根拠のあるDual N-Back課題を1日5分で。ワーキングメモリと集中力を毎日鍛える。">
+<meta property="og:title" content="Dual N-Back - 脳トレ｜毎日約5分、自分のペースで練習">
+<meta property="og:description" content="毎日約5分、自分のペースでDual N-Back。標準モードは無料、色と形を加える拡張モードは別売です。">
 <meta property="og:image" content="https://hori2-t.github.io/dual-nback-legal/assets/icon-512.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="デュアル N バック - 脳トレ">
-<meta name="twitter:description" content="1日5分の集中力トレーニング">
+<meta name="twitter:description" content="毎日約5分、自分のペースでDual N-Back。">
 <meta name="twitter:image" content="https://hori2-t.github.io/dual-nback-legal/assets/icon-512.jpg">
 
 <script type="application/ld+json">
@@ -25,10 +25,10 @@
   "@context": "https://schema.org",
   "@type": "MobileApplication",
   "name": "デュアル N バック - 脳トレ",
-  "operatingSystem": "iOS 17+",
+  "operatingSystem": "iOS",
   "applicationCategory": "EducationalApplication",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"},
-  "description": "科学的根拠のあるDual N-Back課題を1日5分で。ワーキングメモリと集中力を毎日鍛えるiPhoneアプリ。",
+  "description": "位置と音を比較するDual N-Backを練習し、履歴や結果比較で自分の練習を振り返れるiPhoneアプリ。",
   "image": "https://hori2-t.github.io/dual-nback-legal/assets/icon-512.jpg",
   "url": "https://hori2-t.github.io/dual-nback-legal/"
 }
@@ -73,6 +73,7 @@
     z-index: 0;
   }
   main { position: relative; z-index: 1; }
+  main a:not(.badge-appstore) { color: var(--accent-bright); }
 
   /* ─── Layout ─────────────────────────── */
   .container {
@@ -460,165 +461,42 @@
 </head>
 <body>
 <main>
-  <header class="container hero">
-    <div class="hero-text">
-      <span class="eyebrow">Now Available</span>
-      <h1 class="hero-title">
-        毎日5分で、<br>
-        <span class="gradient">脳のメンテナンス。</span>
-      </h1>
-      <p class="hero-lead">
-        Jaeggi研究のDual N-Back課題を、1セッション約70秒で続けやすく最適化。
-        ワーキングメモリと集中力を、歯磨きのように習慣化する。
-      </p>
-      <div class="cta-row">
-        <a class="badge-appstore" href="https://apps.apple.com/jp/app/dual-n-back-%E8%84%B3%E3%83%88%E3%83%AC/id6767109556">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-          <span class="badge-appstore-text">
-            <small>無料ダウンロード</small>
-            <strong>App Store でダウンロード</strong>
-          </span>
-        </a>
-        <span class="pill-status">iOS 17+ ・ 無料</span>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-orbit"></div>
-      <div class="hero-icon"></div>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="stats">
-      <div class="stat-item">
-        <div class="stat-num">70<small style="font-size:0.5em;font-weight:500;">秒</small></div>
-        <div class="stat-label">1セッションで完結</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">N=2-9</div>
-        <div class="stat-label">難易度自動チューニング</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">19</div>
-        <div class="stat-label">実績バッジ</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">端末内処理</div>
-      </div>
-    </div>
-  </div>
-
-  <section id="features">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-eyebrow">Features</p>
-        <h2 class="section-title">続けるために、削ぎ落とした。</h2>
-        <p class="section-lead">派手なゲーミフィケーションは入れない。淡々と続けるための機能だけを残した、ミニマルな脳トレ体験。</p>
-      </div>
-      <div class="features-grid">
-        <article class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3>1セッション約70秒</h3>
-          <p>20試行 × 3.5秒。通勤電車・昼休み・寝る前のスキマ時間で完結。長時間プレイは推奨しない。</p>
-        </article>
-        <article class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/></svg>
-          </div>
-          <h3>Nレベル自動調整</h3>
-          <p>直近3セッションのスコアから次回難易度をチューニング。「自分の限界より少し上」を常に維持。</p>
-        </article>
-        <article class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-          <h3>3つのゲームモード</h3>
-          <p>標準のフォーカス、連続正答を競うチャレンジ、時間無制限のエンドレス。気分に合わせて選べる。</p>
-        </article>
-        <article class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>プライバシーファースト</h3>
-          <p>スコア・履歴は全て端末内のみに保存。サーバー送信なし。Apple Tracking Transparency 完全準拠。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="science">
-    <div class="container">
-      <div class="science">
-        <div class="science-stat">
-          <div class="science-stat-num">100+</div>
-          <div class="science-stat-label">関連論文</div>
-        </div>
-        <div>
-          <p class="section-eyebrow" style="margin-bottom:16px;">Backed by Research</p>
-          <p class="science-quote">
-            位置情報と聴覚情報を同時にN個前と比較する課題は、ワーキングメモリ容量と注意制御を同時に鍛える唯一無二のメソッド。
-          </p>
-          <p class="science-cite">
-            Susanne Jaeggi et al. (2008) "Improving fluid intelligence with training on working memory" — PNAS<br>
-            本アプリはオリジナル課題に忠実に実装。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="screenshots">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-eyebrow">Screens</p>
-        <h2 class="section-title">起動して、すぐ始める。</h2>
-        <p class="section-lead">ホーム → セッション → 結果。3画面で完結する潔さ。</p>
-      </div>
-      <div class="shots">
-        <figure style="margin:0;">
-          <div class="shot"><img src="assets/screenshots/01-home.jpg" alt="ホーム画面" loading="lazy"></div>
-          <figcaption class="shot-caption">ホーム — N4で待機</figcaption>
-        </figure>
-        <figure style="margin:0;">
-          <div class="shot"><img src="assets/screenshots/02-game.jpg" alt="ゲーム画面" loading="lazy"></div>
-          <figcaption class="shot-caption">セッション — 場所と文字を同時に</figcaption>
-        </figure>
-        <figure style="margin:0;">
-          <div class="shot"><img src="assets/screenshots/03-result.jpg" alt="結果画面" loading="lazy"></div>
-          <figcaption class="shot-caption">結果 — 即座にフィードバック</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section id="legal">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-eyebrow">Legal</p>
-        <h2 class="section-title">取り扱いについて</h2>
-        <p class="section-lead">本アプリの利用条件とデータ取り扱い方針。</p>
-      </div>
-      <div class="legal">
-        <a class="legal-card" href="privacy.html">
-          <h3>プライバシーポリシー <span class="arrow">→</span></h3>
-          <p>アプリが収集するデータと取り扱い方針について</p>
-        </a>
-        <a class="legal-card" href="terms.html">
-          <h3>利用規約 <span class="arrow">→</span></h3>
-          <p>本アプリの利用条件について</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      © 2026 hori2 ・ Built with care for daily focus.
-    </div>
-  </footer>
+<section id="ja" lang="ja"><div class="container">
+<p><a href="#ja">日本語</a> / <a href="#en">English</a></p>
+<p class="section-eyebrow">Dual N-Back - 脳トレ</p>
+<h1 class="hero-title">毎日約5分、自分のペースでDual N-Back。</h1>
+<p class="hero-lead">位置と音を比較する課題を練習し、セッションごとの成績を記録。操作式チュートリアルから始めて、履歴や結果比較で自分の練習を振り返れます。</p>
+<p><a class="badge-appstore" href="https://apps.apple.com/app/id6767109556">App Storeでダウンロード</a></p>
+<h2>特徴</h2>
+<ul><li>今日の5分：約5分のセッションをホームから開始。試行数を設定するセッションにも対応。</li><li>Nレベル調整：直近の成績に基づく自動調整と手動設定。</li><li>自分の記録：履歴、連続練習、実績、前回・最近の成績との比較。</li><li>標準と拡張：標準モードは無料。色・形を加える拡張モードは別売の買い切り。</li></ul>
+<h2>広告・購入</h2>
+<p>広告なし版を未購入の場合、結果画面の下部にバナー広告を表示することがあります。広告なし版と拡張モードは独立した買い切り商品です。拡張モードの購入には広告削除は含まれません。価格はアプリ内の購入画面をご確認ください。</p>
+<h2>データの取り扱い</h2>
+<p>プレイ履歴・設定・実績は端末内に保存します。利用状況の分析と広告配信にはFirebase Analytics、Google Mobile Adsなどを使用し、通信が発生します。詳細はプライバシーポリシーをご確認ください。</p>
+<h2>よくある質問</h2>
+<p>購入を復元するには？<br>設定から購入画面を開き、「購入を復元」を選択してください。広告なし版と拡張モードは別々の権利です。</p>
+<p>拡張モードを購入しても広告が出るのは？<br>拡張モードには広告削除が含まれません。広告を非表示にする商品は「広告なし版」です。</p>
+<p>問い合わせ方法は？<br>不具合の発生手順、アプリのバージョン、端末名、iOSバージョンを添えて、プライバシーポリシー末尾の問い合わせ先までお知らせください。購入のパスワードや決済情報は送らないでください。</p>
+<p><a href="privacy.html">プライバシーポリシー・お問い合わせ</a> / <a href="terms.html">利用規約</a></p>
+</div></section>
+<section id="en" lang="en"><div class="container">
+<p><a href="#ja">日本語</a> / <a href="#en">English</a></p>
+<p class="section-eyebrow">Dual N-Back</p>
+<h2 class="section-title">Practice Dual N-Back at your own pace, for about five minutes a day.</h2>
+<p class="hero-lead">Compare positions and audio cues, then track your session results. Start with an interactive tutorial and review your practice through history and result comparisons.</p>
+<p><a class="badge-appstore" href="https://apps.apple.com/app/id6767109556">Download on the App Store</a></p>
+<h2>Features</h2>
+<ul><li>Daily practice: Start an approximately five-minute session from Home, or configure your trial count.</li><li>N level selection: Automatic adjustment based on recent results, plus manual selection.</li><li>Your own record: History, streaks, achievements and comparisons with previous and recent results.</li><li>Standard and Expanded: Standard mode is free. The separate Expanded Mode one-time purchase adds color and shape matching.</li></ul>
+<h2>Ads and purchases</h2>
+<p>A banner may appear at the bottom of the result screen if Ad-Free is not owned. Ad-Free and Expanded Mode are independent one-time purchases. Expanded Mode does not remove ads. See the in-app purchase screen for prices.</p>
+<h2>Data and privacy</h2>
+<p>Play history, settings and achievements are stored on your device. The app uses services including Firebase Analytics and Google Mobile Ads for analytics and advertising, which involve network communication. See the privacy policy for details.</p>
+<h2>Help</h2>
+<p>To restore purchases, open the purchase screen from Settings and select Restore Purchases. Ad-Free and Expanded Mode are separate entitlements.</p>
+<p>For support, use the contact information at the end of the privacy policy. Include the app version, device, iOS version and steps to reproduce the issue. Do not send purchase passwords or payment information.</p>
+<p><a href="privacy.html">Privacy Policy / Contact</a> / <a href="terms.html">Terms</a></p>
+</div></section>
+<footer><div class="container">© 2026 hori2 · 最終更新日 / Updated: 2026-09-08</div></footer>
 </main>
 </body>
 </html>
